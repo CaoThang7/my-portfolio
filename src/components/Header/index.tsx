@@ -25,7 +25,7 @@ const Header = () => {
     <header
       className="sticky top-0 z-50 w-full border-b-[0.5px] shadow-sm transition-colors duration-300"
       style={{
-        backgroundColor: "var(--background)",
+        backgroundColor: "var(--bg-primary)",
         borderColor: "#e5e5e5",
       }}
     >
@@ -33,7 +33,7 @@ const Header = () => {
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-sm overflow-hidden bg-white dark:bg-[--background] cursor-pointer">
+            <div className="w-8 h-8 rounded-sm overflow-hidden bg-white dark:bg-[--bg-primary] cursor-pointer">
               <Image
                 src="/images/logo/logo.webp"
                 alt="Logo"
@@ -44,7 +44,7 @@ const Header = () => {
                 priority
               />
             </div>
-            <h1 className="text-xl font-bold text-[--foreground] font-sans cursor-pointer">
+            <h1 className="text-xl font-bold text-[--text-primary] font-sans cursor-pointer">
               {t("name.first")} {t("name.last")}
             </h1>
           </div>
@@ -56,8 +56,8 @@ const Header = () => {
             <button
               key={item}
               onClick={() => handleClickNav(item)}
-              className={`relative cursor-pointer text-[--foreground] transition-all duration-300 
-                ${activeItem === item ? "font-bold text-[var(--active-color)]" : "hover:text-[var(--hovernav)] after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-[var(--hovernav)] after:transition-all after:duration-300"}
+              className={`relative cursor-pointer text-[--text-primary] transition-all duration-300 
+                ${activeItem === item ? "font-bold text-[var(--color-active)]" : "hover:text-[var(--hover-nav)] after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-[var(--hover-nav)] after:transition-all after:duration-300"}
               `}
             >
               {t("navigation." + item.toLowerCase())}
@@ -73,7 +73,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-[--foreground] p-0 relative z-[51]"
+          className="md:hidden text-[--text-primary] p-0 relative z-[51]"
         >
           <div className="w-5 h-4 relative flex flex-col justify-center gap-[5px]">
             <span
@@ -97,7 +97,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 bg-white dark:bg-[var(--background)] z-50 transition-all duration-300 ${
+        className={`md:hidden fixed inset-0 bg-[var(--bg-primary)] z-50 transition-all duration-300 ${
           isMenuOpen
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-[-100%] pointer-events-none"
@@ -109,32 +109,32 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => handleClickNav(item)}
-                className={`flex items-center justify-between py-4 text-base text-[--foreground] border-b-[0.2px] border-gray-400 dark:border-gray-400 transition-all duration-300 ${
+                className={`flex items-center justify-between py-4 text-base text-[--text-primary] border-b-[0.2px] border-gray-400 dark:border-gray-400 transition-all duration-300 ${
                   activeItem === item
-                    ? "font-bold text-[var(--active-color)]"
+                    ? "font-bold text-[var(--color-active)]"
                     : ""
                 }`}
               >
                 <div className="flex items-center gap-3">
                   {/* Icons for each menu item */}
                   {item.toLowerCase() === "home" && (
-                    <i className="fas fa-home w-6 text-[var(--foreground)]" />
+                    <i className="fas fa-home w-6 text-[var(--text-primary)]" />
                   )}
                   {item.toLowerCase() === "about" && (
-                    <i className="fas fa-user w-6 text-[var(--foreground)]" />
+                    <i className="fas fa-user w-6 text-[var(--text-primary)]" />
                   )}
                   {item.toLowerCase() === "skills" && (
-                    <i className="fas fa-code w-6 text-[var(--foreground)]" />
+                    <i className="fas fa-code w-6 text-[var(--text-primary)]" />
                   )}
                   {item.toLowerCase() === "projects" && (
-                    <i className="fas fa-project-diagram w-6 text-[var(--foreground)]" />
+                    <i className="fas fa-project-diagram w-6 text-[var(--text-primary)]" />
                   )}
                   {item.toLowerCase() === "contact" && (
-                    <i className="fas fa-envelope w-6 text-[var(--foreground)]" />
+                    <i className="fas fa-envelope w-6 text-[var(--text-primary)]" />
                   )}
                   <span>{t("navigation." + item.toLowerCase())}</span>
                 </div>
-                <i className="fas fa-chevron-right text-[var(--foreground)]" />
+                <i className="fas fa-chevron-right text-[var(--text-primary)]" />
               </button>
             ))}
           </nav>
