@@ -1,0 +1,14 @@
+{
+  "navigation": {
+    "home": "Trang chủ",
+    "about": "Về tôi",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "name": {
+    "first": "Cao",
+    "last": "Thắng",
+    "full": "Lý Cao Thắng"
+  }
+}

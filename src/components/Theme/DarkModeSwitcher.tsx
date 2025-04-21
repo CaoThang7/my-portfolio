@@ -1,4 +1,5 @@
 "use client";
+
 import useColorMode from "@/hooks/useColorMode";
 
 const DarkModeSwitcher = () => {
@@ -13,7 +14,7 @@ const DarkModeSwitcher = () => {
   };
 
   return (
-    <div className="w-[55px] h-[55px] rounded-full flex justify-center items-center fixed bottom-[90px] right-6 z-[999] cursor-pointer">
+    <div className="w-[45px] h-[30px] rounded-full flex justify-center items-center fixed bottom-[90px] right-6 z-[999] cursor-pointer">
       {colorMode === "light" ? (
         <i
           className="fa-solid fa-moon text-black text-[2rem] [text-shadow:0_0_10px_#162052]"

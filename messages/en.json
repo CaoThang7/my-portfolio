@@ -1,0 +1,14 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "name": {
+    "first": "Cao",
+    "last": "Thang",
+    "full": "Ly Cao Thang"
+  }
+}
