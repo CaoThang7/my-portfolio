@@ -36,10 +36,10 @@ export default function LanguageSwitcher() {
   }, []);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative w-full md:w-auto" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center cursor-pointer gap-2 text-base text-[--foreground] font-sans font-medium"
+        className="flex items-center cursor-pointer gap-2 text-base text-[--foreground] font-sans font-medium w-full"
       >
         <span className="flex items-center gap-2">
           <span className="text-lg">{currentLang?.flag}</span>
@@ -53,7 +53,7 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-1 py-2 w-36 bg-white dark:bg-[var(--background)] shadow-[var(--shadow-dropdown-language)]">
+        <div className="absolute left-0 right-0 md:left-auto md:right-0 mt-1 py-2 w-full md:w-36 bg-white dark:bg-[var(--background)] shadow-[var(--shadow-dropdown-language)]">
           {languages.map((lang) => (
             <button
               key={lang.code}

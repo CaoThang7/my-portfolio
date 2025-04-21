@@ -9,10 +9,12 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState<string>("");
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const t = useTranslations("");
 
   const handleClickNav = (item: string) => {
     setActiveItem(item);
+    setIsMenuOpen(false);
     const element = document.getElementById(item.toLowerCase());
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -48,8 +50,8 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Navbar */}
-        <nav className="flex space-x-6 text-base font-medium font-sans">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex space-x-6 text-base font-medium font-sans">
           {navItems.map((item) => (
             <button
               key={item}
@@ -63,8 +65,83 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Language */}
-        <LanguageSwitcher />
+        {/* Desktop Language Switcher */}
+        <div className="hidden md:block">
+          <LanguageSwitcher />
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-[--foreground] p-0 relative z-[51]"
+        >
+          <div className="w-5 h-4 relative flex flex-col justify-center gap-[5px]">
+            <span
+              className={`absolute w-5 h-[2px] bg-current transform transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+              }`}
+            />
+            <span
+              className={`absolute w-5 h-[2px] bg-current transition-opacity duration-300 ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`absolute w-5 h-[2px] bg-current transform transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+              }`}
+            />
+          </div>
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed inset-0 bg-white dark:bg-[var(--background)] z-50 transition-all duration-300 ${
+          isMenuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-[-100%] pointer-events-none"
+        }`}
+      >
+        <div className="h-full flex flex-col pt-14 px-4">
+          <nav className="flex flex-col font-medium font-sans">
+            {navItems.map((item) => (
+              <button
+                key={item}
+                onClick={() => handleClickNav(item)}
+                className={`flex items-center justify-between py-4 text-base text-[--foreground] border-b-[0.2px] border-gray-400 dark:border-gray-400 transition-all duration-300 ${
+                  activeItem === item
+                    ? "font-bold text-[var(--active-color)]"
+                    : ""
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  {/* Icons for each menu item */}
+                  {item.toLowerCase() === "home" && (
+                    <i className="fas fa-home w-6 text-[var(--foreground)]" />
+                  )}
+                  {item.toLowerCase() === "about" && (
+                    <i className="fas fa-user w-6 text-[var(--foreground)]" />
+                  )}
+                  {item.toLowerCase() === "skills" && (
+                    <i className="fas fa-code w-6 text-[var(--foreground)]" />
+                  )}
+                  {item.toLowerCase() === "projects" && (
+                    <i className="fas fa-project-diagram w-6 text-[var(--foreground)]" />
+                  )}
+                  {item.toLowerCase() === "contact" && (
+                    <i className="fas fa-envelope w-6 text-[var(--foreground)]" />
+                  )}
+                  <span>{t("navigation." + item.toLowerCase())}</span>
+                </div>
+                <i className="fas fa-chevron-right text-[var(--foreground)]" />
+              </button>
+            ))}
+          </nav>
+          <div className="mt-0 pt-4 border-gray-200 dark:border-gray-700">
+            <LanguageSwitcher />
+          </div>
+        </div>
       </div>
     </header>
   );
