@@ -14,9 +14,28 @@ export default function LanguageSwitcher() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const currentLang = languages.find((lang) => lang.code === locale);
 
-  const handleLanguageChange = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
-    setIsOpen(false);
+  const handleLanguageChange = async (newLocale: string) => {
+    try {
+      // Set locale cookie
+      setCookie(newLocale);
+      
+      // Navigate to new locale path
+      const newPath = getLocalizedPath(pathname);
+      router.replace(newPath, { locale: newLocale });
+      setIsOpen(false);
+    } catch (error) {
+      console.error('Error changing language:', error);
+    }
+  };
+
+  // Helper functions
+  const setCookie = (locale: string) => {
+    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
+  };
+
+  const getLocalizedPath = (currentPath: string) => {
+    const localePattern = new RegExp(`^/(${languages.map(l => l.code).join('|')})`);
+    return currentPath.replace(localePattern, '') || '/';
   };
 
   useEffect(() => {
@@ -39,7 +58,7 @@ export default function LanguageSwitcher() {
     <div className="relative w-full md:w-auto" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center cursor-pointer gap-2 text-base text-[--foreground] font-sans font-medium w-full"
+        className="flex items-center cursor-pointer gap-2 text-base text-[--text-primary] font-sans font-medium w-full"
       >
         <span className="flex items-center gap-2">
           <span className="text-lg">{currentLang?.flag}</span>
@@ -53,15 +72,15 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 right-0 md:left-auto md:right-0 mt-1 py-2 w-full md:w-36 bg-white dark:bg-[var(--background)] shadow-[var(--shadow-dropdown-language)]">
+        <div className="absolute left-0 right-0 md:left-auto md:right-0 mt-1 py-2 w-full md:w-36 bg-white dark:bg-[var(--bg-primary)] shadow-[var(--shadow-dropdown-language)]">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
-              className={`w-full cursor-pointer text-left px-4 py-2 text-sm hover:bg-[var(--hoverlang)] hover:bg-opacity-10 transition-all duration-300 flex items-center gap-2 ${
+              className={`w-full cursor-pointer text-left px-4 py-2 text-sm hover:bg-[var(--hover-lang)] hover:bg-opacity-10 transition-all duration-300 flex items-center gap-2 ${
                 locale === lang.code
-                  ? "font-bold text-[var(--active-color)]"
-                  : "text-[var(--foreground)]"
+                  ? "font-bold text-[var(--color-active)]"
+                  : "text-[var(--text-primary)]"
               }`}
             >
               <span className="text-lg">{lang.flag}</span>
