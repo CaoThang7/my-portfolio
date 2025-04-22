@@ -18,7 +18,7 @@ function useLocalStorage<T>(
       console.log(error);
       setStoredValue(initialValue);
     }
-  }, [key]);
+  }, [key, initialValue]);
 
   // Cập nhật localStorage khi storedValue thay đổi
   useEffect(() => {
