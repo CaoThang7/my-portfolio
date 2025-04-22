@@ -35,7 +35,7 @@ const Header = () => {
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-sm overflow-hidden bg-white dark:bg-[--bg-primary] cursor-pointer">
               <Image
-                src="/images/logo/logo.webp"
+                src="/images/logo/logo.jpg"
                 alt="Logo"
                 width={32}
                 height={32}
