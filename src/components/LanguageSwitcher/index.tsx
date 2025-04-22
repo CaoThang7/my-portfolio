@@ -4,6 +4,7 @@ import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { useState, useEffect, useRef } from "react";
 import { languages } from "@/constants/index";
+import { setCookie } from 'nookies';
 
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -16,36 +17,23 @@ export default function LanguageSwitcher() {
 
   const handleLanguageChange = async (newLocale: string) => {
     try {
-      // Set locale cookie
-      setCookie(newLocale);
+      setCookie(null, 'NEXT_LOCALE', newLocale, { path: '/' });
+      const targetPath = pathname === '/' ? '/' : pathname;
+      await router.replace(targetPath, { locale: newLocale });
       
-      // Navigate to new locale path
-      const newPath = getLocalizedPath(pathname);
-      // Use push instead of replace to force a full navigation
-      await router.push(newPath, { locale: newLocale });
+      if (locale !== newLocale) {
+        window.location.href = `/${newLocale}${targetPath === '/' ? '' : targetPath}`;
+      }
+      
       setIsOpen(false);
     } catch (error) {
       console.error('Error changing language:', error);
     }
   };
 
-  // Helper functions
-  const setCookie = (locale: string) => {
-    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
-  };
-
-  const getLocalizedPath = (currentPath: string) => {
-    const localePattern = new RegExp(`^/(${languages.map(l => l.code).join('|')})`);
-    const pathWithoutLocale = currentPath.replace(localePattern, '');
-    return pathWithoutLocale || '/';
-  };
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
