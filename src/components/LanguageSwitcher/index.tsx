@@ -21,7 +21,8 @@ export default function LanguageSwitcher() {
       
       // Navigate to new locale path
       const newPath = getLocalizedPath(pathname);
-      router.replace(newPath, { locale: newLocale });
+      // Use push instead of replace to force a full navigation
+      await router.push(newPath, { locale: newLocale });
       setIsOpen(false);
     } catch (error) {
       console.error('Error changing language:', error);
@@ -35,7 +36,8 @@ export default function LanguageSwitcher() {
 
   const getLocalizedPath = (currentPath: string) => {
     const localePattern = new RegExp(`^/(${languages.map(l => l.code).join('|')})`);
-    return currentPath.replace(localePattern, '') || '/';
+    const pathWithoutLocale = currentPath.replace(localePattern, '');
+    return pathWithoutLocale || '/';
   };
 
   useEffect(() => {
