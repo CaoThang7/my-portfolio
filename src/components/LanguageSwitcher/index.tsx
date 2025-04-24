@@ -48,7 +48,7 @@ export default function LanguageSwitcher() {
     <div className="relative w-full md:w-auto" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center cursor-pointer gap-2 text-base text-[--text-primary] font-sans font-medium w-full"
+        className="flex items-center cursor-pointer gap-2 text-base text-[var(--text-primary)] font-sans font-medium w-full"
       >
         <span className="flex items-center gap-2">
           <span className="text-lg">{currentLang?.flag}</span>

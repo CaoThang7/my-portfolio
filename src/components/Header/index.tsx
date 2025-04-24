@@ -33,18 +33,18 @@ const Header = () => {
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-sm overflow-hidden bg-white dark:bg-[--bg-primary] cursor-pointer">
+            <div className="w-8 h-8 rounded-sm overflow-hidden bg-[var(--bg-primary)] cursor-pointer">
               <Image
                 src="/images/logo/logo.jpg"
                 alt="Logo"
                 width={32}
                 height={32}
-                className="invert dark:invert-0 object-cover"
+                className="object-cover"
                 quality={75}
                 priority
               />
             </div>
-            <h1 className="text-xl font-bold text-[--text-primary] font-sans cursor-pointer">
+            <h1 className="text-xl font-bold text-[var(--text-primary)] font-sans cursor-pointer">
               {t("name.first")} {t("name.last")}
             </h1>
           </div>
@@ -56,7 +56,7 @@ const Header = () => {
             <button
               key={item}
               onClick={() => handleClickNav(item)}
-              className={`relative cursor-pointer text-[--text-primary] transition-all duration-300 
+              className={`relative cursor-pointer transition-all duration-300 
                 ${activeItem === item ? "font-bold text-[var(--color-active)]" : "hover:text-[var(--hover-nav)] after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-[var(--hover-nav)] after:transition-all after:duration-300"}
               `}
             >
@@ -73,7 +73,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-[--text-primary] p-0 relative z-[51]"
+          className="md:hidden text-[var(--text-primary)] p-0 relative z-[51]"
         >
           <div className="w-5 h-4 relative flex flex-col justify-center gap-[5px]">
             <span
@@ -109,7 +109,7 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => handleClickNav(item)}
-                className={`flex items-center justify-between py-4 text-base text-[--text-primary] border-b-[0.2px] border-gray-400 dark:border-gray-400 transition-all duration-300 ${
+                className={`flex items-center justify-between py-4 text-base border-b-[0.2px] border-gray-400 dark:border-gray-400 transition-all duration-300 ${
                   activeItem === item
                     ? "font-bold text-[var(--color-active)]"
                     : ""

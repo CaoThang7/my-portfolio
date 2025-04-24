@@ -27,7 +27,7 @@ const Progress = () => {
   return (
     <div
       ref={progressRef}
-      className="w-[45px] h-[45px] rounded-full fixed bottom-6 right-4 z-[999] cursor-pointer shadow-[0_0_10px_var(--whiteColor)] flex items-center justify-center"
+      className="w-[45px] h-[45px] rounded-full fixed bottom-6 right-4 z-[999] cursor-pointer shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center justify-center"
       style={{
         background: `conic-gradient(#38bdf8 ${scroll}%, #0f172a ${scroll}%)`,
       }}
