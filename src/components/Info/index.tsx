@@ -8,7 +8,7 @@ const Information = () => {
   const t = useTranslations("");
 
   return (
-    <div className="max-w-2xl mx-auto px-4 sm:px-6">
+    <section id="info" className="max-w-2xl mx-auto px-4 sm:px-6">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:pb-8 md:pb-12 lg:pb-16" data-aos="zoom-in">
         {socialLinks.map((link) => (
           <Link
@@ -30,7 +30,7 @@ const Information = () => {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
