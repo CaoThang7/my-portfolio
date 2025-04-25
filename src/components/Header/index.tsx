@@ -117,9 +117,6 @@ const Header = () => {
               >
                 <div className="flex items-center gap-3">
                   {/* Icons for each menu item */}
-                  {item.toLowerCase() === "home" && (
-                    <i className="fas fa-home w-6 text-[var(--text-primary)]" />
-                  )}
                   {item.toLowerCase() === "about" && (
                     <i className="fas fa-user w-6 text-[var(--text-primary)]" />
                   )}

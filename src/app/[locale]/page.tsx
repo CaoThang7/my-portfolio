@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import About from "@/components/About";
 
 export const metadata: Metadata = {
   title: "Home | Portfolio",
@@ -8,20 +9,7 @@ export const metadata: Metadata = {
 const Home = () => {
   return (
     <>
-      <section id="home" className="h-[300px] w-full mt-8 bg-red-500">
-        {" "}
-        <h1 className="text-xl font-bold font-sans">Home coming soon</h1>
-      </section>
-
-      <section id="about" className="h-[300px] w-full mt-8 bg-yellow-500">
-        {" "}
-        <h1 className="text-xl font-bold font-sans">About coming soon</h1>
-      </section>
-
-      <section id="skills" className="h-[300px] w-full mt-8 bg-blue-500">
-        {" "}
-        <h1 className="text-xl font-bold font-sans">Skills coming soon</h1>
-      </section>
+      <About />
     </>
   );
 };

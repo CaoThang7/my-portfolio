@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AOSInit from "@/components/AOS/AOSInit";
 import Progress from "@/components/ScrollProgress/Progress";
 import DarkModeSwitcher from "@/components/Theme/DarkModeSwitcher";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -7,6 +8,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { inter } from "@/fonts/font";
 import "@/app/globals.css";
+import "aos/dist/aos.css";
 
 export default async function LocaleLayout({
   children,
@@ -16,7 +18,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -35,6 +37,7 @@ export default async function LocaleLayout({
           <Progress />
           <Header />
           <main className="max-w-screen-xl min-h-screen mx-auto px-[15px] overflow-hidden">
+            <AOSInit />
             {children}
           </main>
           <Footer />
