@@ -14,5 +14,8 @@
   "about": {
     "title": "Hi, I'm Ly Cao Thang",
     "description": "I'm a passionate Frontend Web Developer with a strong focus on building modern, responsive, and performant websites. I specialize in Next.js, and I love creating smooth user experiences with clean UI and great UX. Previously a mobile developer using Flutter and React Native, I've now shifted my focus to the web platform, where I thrive in building frontend interfaces that are both functional and visually appealing. I focus on building clean, scalable, and user-friendly web interfaces that deliver real value."
+  },
+  "info": {
+    "cv": "Download CV"
   }
 }

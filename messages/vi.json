@@ -14,5 +14,8 @@
   "about": {
     "title": "Xin chào, tôi là Lý Cao Thắng",
     "description": "Tôi là một lập trình viên Frontend đầy đam mê, với định hướng mạnh mẽ vào việc xây dựng các website hiện đại, responsive và hiệu suất cao. Tôi chuyên về Next.js và rất thích tạo ra những trải nghiệm người dùng mượt mà với giao diện sạch sẽ và trải nghiệm UX tuyệt vời. Trước đây, tôi là một lập trình viên di động sử dụng Flutter và React Native, nhưng hiện tại tôi đã chuyển hướng sang nền tảng web – nơi tôi thực sự yêu thích việc xây dựng các giao diện frontend vừa chức năng, vừa thẩm mỹ. Tôi tập trung vào việc phát triển các giao diện web sạch sẽ, dễ mở rộng và thân thiện với người dùng, mang lại giá trị thực sự."
+  },
+  "info": {
+    "cv": "Tải CV"
   }
 }

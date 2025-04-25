@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import About from "@/components/About";
+import Information from "@/components/Info";
 
 export const metadata: Metadata = {
   title: "Home | Portfolio",
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <>
       <About />
+      <Information />
     </>
   );
 };
