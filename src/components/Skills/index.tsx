@@ -41,7 +41,7 @@ const Skills = () => {
       >
         <div className="flex w-full items-center">
           <CarouselPrevious
-            className="relative left-0 z-10 hidden lg:flex"
+            className="relative left-0 z-10 hidden lg:flex cursor-pointer"
             data-aos="fade-right"
           />
           <CarouselContent>
@@ -77,7 +77,7 @@ const Skills = () => {
             ))}
           </CarouselContent>
           <CarouselNext
-            className="relative right-0 z-10 hidden lg:flex"
+            className="relative right-0 z-10 hidden lg:flex cursor-pointer"
             data-aos="fade-left"
           />
         </div>
