@@ -20,7 +20,11 @@ const Skills = () => {
       id="skills"
       className="w-full max-w-6xl mx-auto py-12 scroll-mt-12"
     >
-      <h1 className="text-2xl font-bold text-[var(--text-primary)] font-sans mb-8">
+      <h1
+        className="text-2xl font-bold text-[var(--text-primary)] font-sans mb-8"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         {t("navigation.skills")}
       </h1>
       <Carousel
@@ -31,10 +35,15 @@ const Skills = () => {
           slidesToScroll: 1,
           inViewThreshold: 0.5,
         }}
-        plugins={[Autoplay({ delay: 125000, stopOnInteraction: false })]}
+        plugins={[Autoplay({ delay: 5500, stopOnInteraction: false })]}
+        data-aos="fade-up"
+        data-aos-duration="2000"
       >
         <div className="flex w-full items-center">
-          <CarouselPrevious className="relative left-0 z-10 hidden lg:flex" />
+          <CarouselPrevious
+            className="relative left-0 z-10 hidden lg:flex"
+            data-aos="fade-right"
+          />
           <CarouselContent>
             {cards.map((card, idx) => (
               <CarouselItem
@@ -54,6 +63,7 @@ const Skills = () => {
                         style={{
                           width: `${100 / Math.min(3, card.items.length)}%`,
                         }}
+                        data-aos="fade-up"
                       >
                         {item.icon}
                         <span className="mt-2 text-sm sm:text-base font-medium font-sans">
@@ -66,7 +76,10 @@ const Skills = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselNext className="relative right-0 z-10 hidden lg:flex" />
+          <CarouselNext
+            className="relative right-0 z-10 hidden lg:flex"
+            data-aos="fade-left"
+          />
         </div>
       </Carousel>
     </section>
