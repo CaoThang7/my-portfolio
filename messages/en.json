@@ -17,5 +17,10 @@
   },
   "info": {
     "cv": "Download CV"
+  },
+  "skills": {
+    "languages": "Languages",
+    "database": "Database",
+    "cloud": "Cloud Services"
   }
 }

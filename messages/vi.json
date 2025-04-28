@@ -17,5 +17,10 @@
   },
   "info": {
     "cv": "Tải CV"
+  },
+  "skills": {
+    "languages": "Ngôn ngữ",
+    "database": "Cơ sở dữ liệu",
+    "cloud": "Dịch vụ đám mây"
   }
 }

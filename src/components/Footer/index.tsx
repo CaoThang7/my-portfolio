@@ -6,8 +6,8 @@ const Footer = () => {
   const t = useTranslations();
 
   return (
-    <footer className="w-full bg-[var(--bg-primary)] py-4 mt-8">
-      <div className="max-w-screen-xl mx-auto px-4 text-center text-base font-sans font-medium">
+    <footer className="w-full bg-[var(--bg-primary)]">
+      <div className="mx-auto text-center text-base font-sans font-medium bg-[var(--bg-card)] p-4">
         {`Copyright © 2025 ${t("name.full")}. All rights reserved`}
       </div>
     </footer>

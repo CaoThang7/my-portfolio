@@ -15,21 +15,28 @@ const Header = () => {
   const handleClickNav = (item: string) => {
     setActiveItem(item);
     setIsMenuOpen(false);
-    const element = document.getElementById(item.toLowerCase());
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  
+    if (item.toLowerCase() === "about") {
+      // Nếu là About thì scroll lên top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Các section khác scroll như bình thường
+      const element = document.getElementById(item.toLowerCase());
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  };
+  };  
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b-[0.5px] shadow-sm transition-colors duration-300"
+      className="sticky top-0 z-50 w-full border-b-[0.5px] shadow-sm transition-colors duration-300 mx-auto px-[15px]"
       style={{
         backgroundColor: "var(--bg-primary)",
         borderColor: "#e5e5e5",
       }}
     >
-      <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-2">
@@ -44,7 +51,7 @@ const Header = () => {
                 priority
               />
             </div>
-            <h1 className="text-xl font-bold text-[var(--text-primary)] font-sans cursor-pointer">
+            <h1 className="text-2xl font-bold text-[var(--text-primary)] font-sans cursor-pointer">
               {t("name.first")} {t("name.last")}
             </h1>
           </div>

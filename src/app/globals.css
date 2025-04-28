@@ -7,6 +7,8 @@
   --hover-lang: rgb(255 237 213);
   --color-active: #ea580c;
   --shadow-dropdown-language: 0 0 15px rgba(0, 0, 0, 0.1), 0 0 3px rgba(0, 0, 0, 0.1);
+  --bg-card: #f4f4f5;
+  --border-card: #d4d4d8;
 }
 
 .dark {
@@ -16,6 +18,8 @@
   --hover-lang: #1e2939;
   --color-active: yellow;
   --shadow-dropdown-language: 0 0 8px rgb(255, 255, 255), 0 0 3px rgba(255, 255, 255, 0.1);
+  --bg-card: #262626;
+  --border-card: #404040;
 }
 
 .dark header {
@@ -26,10 +30,6 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans), sans-serif;
-}
-
-html {
-  scroll-padding-top: 88px;
 }
 
 @keyframes wave {

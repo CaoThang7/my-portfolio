@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 import Information from "@/components/Info";
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ const Home = () => {
     <>
       <About />
       <Information />
+      <Skills />
     </>
   );
 };
