@@ -22,5 +22,37 @@
     "languages": "Languages",
     "database": "Database",
     "cloud": "Cloud Services"
+  },
+  "projects": {
+    "viewWebsite": "View Website",
+    "descriptions": {
+      "yatrasia_desc": "Online booking agency for private and public transportation services in Viet Nam, Cambodia, Laos, and Thailand.",
+      "yatrasia_desc2": "Online booking agency for private and public transportation services in Viet Nam, Cambodia, Laos, and Thailand.",
+      "yatrasia_desc3": "Online booking agency for private and public transportation services in Viet Nam, Cambodia, Laos, and Thailand."
+    },
+    "github": "My Github"
+  },
+  "contact": {
+    "title": "Let's Connect! 💌",
+    "description": "If you ever want to grab a coffee/milk tea or just have a quick chat — or if you're looking for a passionate developer to join your team — you can find me on social media or you can send me a message here!",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "SEND MESSAGE",
+    "sending": "Sending...",
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "invalidEmail": "Invalid email address",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required"
+    },
+    "messageSent": "Message sent successfully!"
+  },
+  "thank": {
+    "title": "What's Next",
+    "logan": "Let's Work Together!",
+    "description": "A professional responsive Portfolio website with NextJS. Finally, I'd like to thank everyone for watching my Portfolio. I hope you like my Portfolio page. Have a good day!"
   }
 }

@@ -9,6 +9,9 @@
   --shadow-dropdown-language: 0 0 15px rgba(0, 0, 0, 0.1), 0 0 3px rgba(0, 0, 0, 0.1);
   --bg-card: #f4f4f5;
   --border-card: #d4d4d8;
+  --bg-tech: #ffedd5;
+  --text-tech: #ea580c;
+  --placeholder: #888;
 }
 
 .dark {
@@ -20,6 +23,9 @@
   --shadow-dropdown-language: 0 0 8px rgb(255, 255, 255), 0 0 3px rgba(255, 255, 255, 0.1);
   --bg-card: #262626;
   --border-card: #404040;
+  --bg-tech: #2e1b0e;
+  --text-tech: #facc15;
+  --placeholder: #aaa;
 }
 
 .dark header {

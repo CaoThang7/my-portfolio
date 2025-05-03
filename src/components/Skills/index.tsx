@@ -23,7 +23,6 @@ const Skills = () => {
       <h1
         className="text-2xl font-bold text-[var(--text-primary)] font-sans mb-8"
         data-aos="fade-up"
-        data-aos-duration="2000"
       >
         {t("navigation.skills")}
       </h1>
@@ -37,7 +36,6 @@ const Skills = () => {
         }}
         plugins={[Autoplay({ delay: 5500, stopOnInteraction: false })]}
         data-aos="fade-up"
-        data-aos-duration="2000"
       >
         <div className="flex w-full items-center">
           <CarouselPrevious

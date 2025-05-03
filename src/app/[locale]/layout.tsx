@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 import AOSInit from "@/components/AOS/AOSInit";
 import Progress from "@/components/ScrollProgress/Progress";
 import DarkModeSwitcher from "@/components/Theme/DarkModeSwitcher";
@@ -7,6 +8,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { inter } from "@/fonts/font";
+import { Toaster } from "sonner";
 import "@/app/globals.css";
 import "aos/dist/aos.css";
 
@@ -40,8 +42,10 @@ export default async function LocaleLayout({
             <AOSInit />
             {children}
           </main>
+          <Contact />
           <Footer />
         </NextIntlClientProvider>
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );

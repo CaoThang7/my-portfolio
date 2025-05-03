@@ -22,5 +22,37 @@
     "languages": "Ngôn ngữ",
     "database": "Cơ sở dữ liệu",
     "cloud": "Dịch vụ đám mây"
+  },
+  "projects": {
+    "viewWebsite": "Xem Trang Web",
+    "descriptions": {
+      "yatrasia_desc": "Nền tảng trực tuyến đặt dịch vụ đi lại cá nhân và công cộng ở Việt Nam, Campuchia, Lào, và Thái Lan",
+      "yatrasia_desc2": "Nền tảng trực tuyến đặt dịch vụ đi lại cá nhân và công cộng ở Việt Nam, Campuchia, Lào, và Thái Lan",
+      "yatrasia_desc3": "Nền tảng trực tuyến đặt dịch vụ đi lại cá nhân và công cộng ở Việt Nam, Campuchia, Lào, và Thái Lan"
+    },
+    "github": "Github của tôi"
+  },
+  "contact": {
+    "title": "Hãy liên hệ với tôi! 💌",
+    "description": "Nếu bạn muốn thưởng thức một cốc cà phê/trà sữa hoặc chỉ cần một cuộc nói chuyện nhanh — hoặc nếu bạn đang tìm kiếm một lập trình viên nhiệt tình để tham gia đội của bạn — bạn có thể tìm tôi trên mạng xã hội hoặc gửi tin nhắn cho tôi ở đây!",
+    "name": "Tên",
+    "email": "Email",
+    "subject": "Chủ đề",
+    "message": "Tin nhắn",
+    "send": "Gửi tin nhắn",
+    "sending": "Đang gửi...",
+    "errors": {
+      "nameRequired": "Tên là bắt buộc",
+      "emailRequired": "Email là bắt buộc",
+      "invalidEmail": "Email không hợp lệ",
+      "subjectRequired": "Chủ đề là bắt buộc",
+      "messageRequired": "Tin nhắn là bắt buộc"
+    },
+    "messageSent": "Tin nhắn đã được gửi thành công!"
+  },
+  "thank": {
+    "title": "Điều tiếp theo",
+    "logan": "Hãy cùng làm việc!",
+    "description": "Một trang web Portfolio chuyên nghiệp với NextJS. Cuối cùng, tôi muốn cảm ơn tất cả mọi người đã xem Portfolio của tôi. Hy vọng bạn sẽ thích trang web Portfolio của tôi. Chúc bạn một ngày tốt lành!"
   }
 }

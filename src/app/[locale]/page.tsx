@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import About from "@/components/About";
+import Thanks from "@/components/Thank";
 import Skills from "@/components/Skills";
 import Information from "@/components/Info";
+import Projects from "@/components/Projects";
 
 export const metadata: Metadata = {
   title: "Home | Portfolio",
@@ -14,6 +16,8 @@ const Home = () => {
       <About />
       <Information />
       <Skills />
+      <Projects />
+      <Thanks />
     </>
   );
 };
