@@ -112,7 +112,7 @@ const Projects = () => {
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/CaoThang7"
-          className="uppercase font-medium font-sans tracking-[5px] text-sm text-[--whiteColor] border-b border-[#689af8] px-0 py-2 pr-2 transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] hover:px-2 hover:bg-[#689af81a] cursor-pointer"
+          className="uppercase font-medium font-sans tracking-[5px] text-sm text-[var(--text-primary)] border-b border-[#689af8] px-0 py-2 pr-2 transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] hover:px-2 hover:bg-[#689af81a] cursor-pointer"
         >
           {t("projects.github")} <i className="fa-brands fa-github ml-1"></i>
         </Link>
