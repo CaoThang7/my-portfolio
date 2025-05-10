@@ -1,3 +1,5 @@
+import { US, VN } from 'country-flag-icons/react/3x2';
+
 export const navItems = [
   "About",
   "Skills",
@@ -6,6 +8,16 @@ export const navItems = [
 ];
 
 export const languages = [
-  { code: "en", name: "English", flag: "🇺🇸" },
-  { code: "vi", name: "Tiếng Việt", flag: "🇻🇳" },
+  { 
+    code: "en", 
+    name: "English", 
+    flag: "🇺🇸",
+    FlagIcon: US 
+  },
+  { 
+    code: "vi", 
+    name: "Tiếng Việt", 
+    flag: "🇻🇳",
+    FlagIcon: VN 
+  },
 ];
